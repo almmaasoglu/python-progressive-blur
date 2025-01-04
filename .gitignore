@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.DS_Store
+output_images/
+*.jpg
+*.jpeg
+*.png
+*.webp
+.env
+venv/
+.idea/
