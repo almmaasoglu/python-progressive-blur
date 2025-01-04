@@ -1,5 +1,10 @@
 # Progressive Blur
 
+<div align="center">
+  <img src="example_01.jpeg" alt="Example 1" width="400"/>
+  <img src="example_02.jpeg" alt="Example 2" width="400"/>
+</div>
+
 A Python library that applies a smooth, progressive blur effect to images. The blur intensity increases gradually from top to bottom, creating an aesthetic transition effect.
 
 ## Installation
