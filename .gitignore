@@ -2,11 +2,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 .DS_Store
-output_images/
-*.jpg
-*.jpeg
-*.png
-*.webp
+!output_images/
+!output_images/*.jpeg
+!output_images/*.webp
 .env
 venv/
 .idea/
