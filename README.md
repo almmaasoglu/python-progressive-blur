@@ -5,7 +5,7 @@
   <img src="output_images/blurred_DWSFET00AN1J3BDD4T5YA057E0.jpeg" alt="Example 2" width="400"/>
 </div>
 
-A Python library that applies a progressive blur effect to images, creating a smooth transition from clear to blurred areas. Perfect for creating visually appealing image effects where you want to gradually blur portions of an image.
+A Python library that applies a progressive blur effect to images, creating a smooth transition from clear to blurred areas. For creating visually appealing image effects where you want to gradually blur portions of an image.
 
 ## Features
 
