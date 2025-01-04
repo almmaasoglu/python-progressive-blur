@@ -6,8 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 setup(
     name="progressive-blur",
     version="0.1.0",
-    author="Ali Maasoglu",
-    author_email="your.email@example.com",
+    author="Alim Maasoglu",
     description="A Python library for applying progressive blur effects to images",
     long_description=long_description,
     long_description_content_type="text/markdown",
