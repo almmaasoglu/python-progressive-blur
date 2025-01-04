@@ -1,3 +1,25 @@
+Metadata-Version: 2.1
+Name: progressive-blur
+Version: 0.1.0
+Summary: A Python library for applying progressive blur effects to images
+Home-page: https://github.com/almmaasoglu/python-progressive-blur
+Author: Ali Maasoglu
+Author-email: your.email@example.com
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Multimedia :: Graphics
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: Pillow>=8.0.0
+Requires-Dist: numpy>=1.19.0
+
 # Progressive Blur
 
 <div align="center">
