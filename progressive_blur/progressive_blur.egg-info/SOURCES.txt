@@ -1,9 +1,0 @@
-README.md
-setup.py
-progressive_blur/__init__.py
-progressive_blur/blur.py
-progressive_blur.egg-info/PKG-INFO
-progressive_blur.egg-info/SOURCES.txt
-progressive_blur.egg-info/dependency_links.txt
-progressive_blur.egg-info/requires.txt
-progressive_blur.egg-info/top_level.txt

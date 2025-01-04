@@ -11,4 +11,13 @@ output_images/
 !example_02.jpeg
 .env
 venv/
+test_env/
 .idea/
+dist/
+build/
+*.egg-info/
+.eggs/
+.tox/
+.coverage
+htmlcov/
+.pytest_cache/
