@@ -1,14 +1,10 @@
 # Progressive Blur
 
-<div align="center">
-  <img src="example_01.jpeg" alt="Example 1" width="400"/>
-  <img src="example_02.jpeg" alt="Example 2" width="400"/>
-</div>
-
-A Python library that applies a progressive blur effect to images, creating a smooth transition from clear to blurred areas. Perfect for creating visually appealing image effects where you want to gradually blur portions of an image.
+A Python library that applies a smooth, progressive blur effect to images. The blur intensity increases gradually from top to bottom, creating an aesthetic transition effect.
 
 ## Installation
 
+Install via pip:
 ```bash
 pip install progressive-blur
 ```
@@ -29,39 +25,50 @@ from progressive_blur import apply_progressive_blur
 # Load your image
 image = Image.open("your_image.jpg")
 
-# Apply progressive blur with default parameters
-blurred_image = apply_progressive_blur(image)
+# Apply blur with default parameters
+blurred = apply_progressive_blur(image)
+blurred.save("blurred_image.jpg")
 
 # Or customize the blur effect
-custom_blur = apply_progressive_blur(
+custom_blurred = apply_progressive_blur(
     image,
-    max_blur=50.0,        # Maximum blur radius
-    clear_until=0.15,     # Keep top 15% clear
-    blur_start=0.25,      # Start blur at 25% from top
-    end_y=0.85           # Maximum blur at 85% from top
+    max_blur=30.0,        # Less intense blur
+    clear_until=0.3,      # Keep top 30% clear
+    blur_start=0.4,       # Start blur at 40% from top
+    end_y=0.9            # Reach max blur at 90% from top
 )
-
-# Save the result
-blurred_image.save("blurred_output.jpg")
+custom_blurred.save("custom_blurred.jpg")
 ```
-
-## Features
-
-- Simple and intuitive API
-- Customizable blur parameters
-- Support for various image formats (JPG, JPEG, PNG, WebP)
-- Handles transparent images (RGBA mode)
-- Built on reliable image processing libraries (Pillow, NumPy)
 
 ## Parameters
 
-The `apply_progressive_blur` function accepts the following parameters:
-
-- `image`: PIL Image or bytes object containing the image
+- `image` (PIL.Image or bytes): Input image
 - `max_blur` (float): Maximum blur radius (default: 50.0)
-- `clear_until` (float): Percentage of image height to keep completely clear (default: 0.15)
+- `clear_until` (float): Percentage of image to keep completely clear (default: 0.15)
 - `blur_start` (float): Percentage where blur starts to appear (default: 0.25)
 - `end_y` (float): Percentage where maximum blur is reached (default: 0.85)
+
+## Project Structure
+
+```
+progressive-blur/
+├── LICENSE              # MIT License
+├── README.md           # This file
+├── setup.py            # Package configuration
+├── examples/           # Example scripts
+│   └── test_blur.py    # Example usage and testing
+└── progressive_blur/   # Main package
+    ├── __init__.py
+    └── blur.py        # Core implementation
+```
+
+## Examples
+
+Check out the `examples` directory for more usage examples. The `test_blur.py` script demonstrates:
+- Processing multiple images
+- Working with different image formats (JPG, PNG, WebP)
+- Handling transparency in WebP images
+- Custom blur parameters
 
 ## Requirements
 
@@ -71,4 +78,4 @@ The `apply_progressive_blur` function accepts the following parameters:
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
