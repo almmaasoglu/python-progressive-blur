@@ -1,13 +1,12 @@
 # Progressive Blur
 
 <div align="center">
-  <img src="example_01.jpeg" alt="Example 1" width="400"/>
-  <img src="example_02.jpeg" alt="Example 2" width="400"/>
+  <img src="test_images_unit.png" alt="Progressive Blur Example" width="800"/>
   
   [![PyPI version](https://badge.fury.io/py/progressive-blur.svg)](https://badge.fury.io/py/progressive-blur)
   [![Python Support](https://img.shields.io/pypi/pyversions/progressive-blur.svg)](https://pypi.org/project/progressive-blur/)
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-  [![Tests](https://github.com/almmaasoglu/python-progressive-blur/workflows/tests/badge.svg)](https://github.com/almmaasoglu/python-progressive-blur/actions)
+  [![Tests](https://img.shields.io/badge/tests-passing-brightgreen)](https://github.com/almmaasoglu/python-progressive-blur)
 </div>
 
 A **high-quality Python library** for applying progressive blur effects to images. Create stunning visual effects with smooth, customizable blur transitions that can enhance your images with professional-grade results.
