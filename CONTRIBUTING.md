@@ -1,315 +1,123 @@
 # Contributing to Progressive Blur
 
-Thank you for your interest in contributing to Progressive Blur! This document provides guidelines and information for contributors.
+Hey there! Thanks for considering contributing to Progressive Blur! We're excited to have you here. 🎉
 
-## 🚀 Getting Started
+## Getting Started
 
-### Development Setup
+### Setting Up Your Dev Environment
 
-1. **Fork and clone the repository**:
+1. **Fork and clone the repo**:
    ```bash
    git clone https://github.com/your-username/python-progressive-blur.git
    cd python-progressive-blur
    ```
 
-2. **Create a virtual environment**:
+2. **Create a virtual environment** (recommended):
    ```bash
    python -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
 
-3. **Install development dependencies**:
+3. **Install the package in dev mode**:
    ```bash
    pip install -e ".[dev]"
    ```
 
-4. **Install pre-commit hooks**:
-   ```bash
-   pre-commit install
-   ```
+That's it! You're ready to start contributing.
 
-### Development Workflow
+## Making Changes
 
-1. **Create a feature branch**:
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
+### Quick Workflow
 
-2. **Make your changes** following the coding standards below
-
-3. **Run tests**:
-   ```bash
-   pytest
-   ```
-
-4. **Run quality checks**:
-   ```bash
-   black progressive_blur tests examples
-   isort progressive_blur tests examples
-   flake8 progressive_blur tests
-   mypy progressive_blur
-   ```
-
-5. **Commit your changes**:
-   ```bash
-   git add .
-   git commit -m "feat: add your feature description"
-   ```
-
-6. **Push and create a pull request**:
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-
-## 📝 Coding Standards
+1. Create a new branch: `git checkout -b my-cool-feature`
+2. Make your changes
+3. Run tests: `pytest`
+4. Push and create a PR!
 
 ### Code Style
 
-- **Formatting**: We use [Black](https://black.readthedocs.io/) for code formatting
-- **Import sorting**: We use [isort](https://pycqa.github.io/isort/) with Black profile
-- **Linting**: We use [flake8](https://flake8.pycqa.org/) for linting
-- **Type hints**: All public functions must have type hints
-- **Docstrings**: All public functions must have comprehensive docstrings
+We use a few tools to keep the code consistent, but don't worry - they're mostly automatic:
 
-### Code Quality
-
-- **Line length**: Maximum 88 characters (Black default)
-- **Type hints**: Use type hints for all function parameters and return values
-- **Error handling**: Provide meaningful error messages and handle edge cases
-- **Performance**: Consider performance implications, especially for image processing
-
-### Documentation
-
-- **Docstrings**: Use Google-style docstrings
-- **Comments**: Write clear, concise comments for complex logic
-- **Examples**: Include usage examples in docstrings where appropriate
-
-Example docstring:
-```python
-def apply_progressive_blur(
-    image: ImageInput,
-    max_blur: float = 50.0,
-    direction: Union[BlurDirection, str] = BlurDirection.TOP_TO_BOTTOM,
-) -> Image.Image:
-    """
-    Apply a progressive blur effect to an image.
-    
-    Args:
-        image: Input image (PIL.Image, bytes, or file path)
-        max_blur: Maximum blur radius in pixels
-        direction: Direction of the blur effect
-        
-    Returns:
-        PIL.Image: The processed image with progressive blur effect
-        
-    Raises:
-        ValueError: If max_blur is not positive
-        TypeError: If image input type is not supported
-        
-    Example:
-        >>> from PIL import Image
-        >>> img = Image.open("photo.jpg")
-        >>> blurred = apply_progressive_blur(img, max_blur=30.0)
-        >>> blurred.save("blurred_photo.jpg")
-    """
-```
-
-## 🧪 Testing
-
-### Writing Tests
-
-- **Coverage**: Aim for high test coverage (>90%)
-- **Test types**: Write unit tests for individual functions and integration tests for workflows
-- **Test data**: Use small, synthetic test images to keep tests fast
-- **Edge cases**: Test boundary conditions and error cases
-
-### Test Structure
-
-```python
-class TestYourFeature:
-    """Test your feature functionality."""
-    
-    def test_basic_functionality(self):
-        """Test basic usage."""
-        # Arrange
-        img = Image.new('RGB', (100, 100), color='red')
-        
-        # Act
-        result = your_function(img)
-        
-        # Assert
-        assert isinstance(result, Image.Image)
-        assert result.size == img.size
-    
-    def test_edge_case(self):
-        """Test edge case handling."""
-        with pytest.raises(ValueError, match="Expected error message"):
-            your_function(invalid_input)
-```
-
-### Running Tests
-
-```bash
-# Run all tests
-pytest
-
-# Run with coverage
-pytest --cov=progressive_blur --cov-report=html
-
-# Run specific test file
-pytest tests/test_core.py
-
-# Run specific test
-pytest tests/test_core.py::TestProgressiveBlur::test_basic_blur
-```
-
-## 🐛 Bug Reports
-
-When reporting bugs, please include:
-
-1. **Environment information**:
-   - Python version
-   - Operating system
-   - Package version
-   - Dependencies versions
-
-2. **Reproduction steps**:
-   - Minimal code example
-   - Input data (if possible)
-   - Expected vs. actual behavior
-
-3. **Error messages**:
-   - Full traceback
-   - Any relevant log output
-
-## ✨ Feature Requests
-
-When requesting features:
-
-1. **Use case**: Describe the problem you're trying to solve
-2. **Proposed solution**: Suggest how the feature might work
-3. **Alternatives**: Mention any workarounds you've considered
-4. **Examples**: Provide code examples of how you'd like to use the feature
-
-## 📋 Pull Request Guidelines
-
-### Before Submitting
-
-- [ ] Tests pass locally
-- [ ] Code follows style guidelines
-- [ ] Documentation is updated
-- [ ] CHANGELOG.md is updated (if applicable)
-- [ ] Type hints are added
-- [ ] Docstrings are comprehensive
-
-### Pull Request Template
-
-```markdown
-## Description
-Brief description of changes
-
-## Type of Change
-- [ ] Bug fix
-- [ ] New feature
-- [ ] Breaking change
-- [ ] Documentation update
+- **Black** for formatting (just run `black .`)
+- **Type hints** where they make sense (but don't stress about it)
 
 ## Testing
-- [ ] Tests added/updated
-- [ ] All tests pass
-- [ ] Manual testing performed
 
-## Checklist
-- [ ] Code follows style guidelines
-- [ ] Self-review completed
-- [ ] Documentation updated
-- [ ] No breaking changes (or clearly documented)
+If you're adding new features, it'd be great if you could add some tests. Look at the existing tests in `tests/` for examples. Run tests with:
+
+```bash
+pytest
 ```
 
-## 🏗️ Architecture Guidelines
+## Submitting a Pull Request
 
-### Package Structure
+1. Push your changes to your fork
+2. Create a Pull Request
+3. Describe what you changed and why
+4. That's it! We'll review it and work with you to get it merged
 
+## Types of Contributions We Love
+
+- 🐛 **Bug fixes** - Found something broken? Fix it!
+- ✨ **New features** - Have an idea? Let's discuss it!
+- 📝 **Documentation** - Help others understand how to use the library
+- 🎨 **Examples** - Show cool ways to use progressive blur
+- 💡 **Ideas** - Even if you can't code it, share your thoughts!
+
+## Questions?
+
+Feel free to:
+- Open an issue to discuss your idea
+- Ask questions in discussions
+- Reach out if you need help
+
+## Code Style Guide (The Basics)
+
+### Python Style
+
+```python
+# We like clear variable names
+blur_radius = 50.0  # Good
+br = 50.0  # Less clear
+
+# Add docstrings to help others understand
+def apply_blur(image, radius):
+    """Apply blur effect to an image."""
+    # Your code here
 ```
-progressive_blur/
-├── __init__.py          # Public API exports
-├── core.py              # Core blur algorithms
-├── utils.py             # Utility functions
-├── cli.py               # Command-line interface
-└── types.py             # Type definitions (if needed)
+
+### Commit Messages
+
+Keep them simple and clear:
+- `fix: correct blur calculation for RGBA images`
+- `feat: add motion blur algorithm`
+- `docs: update README examples`
+
+## Running Quality Checks
+
+If you want to run the same checks we do:
+
+```bash
+# Format code
+black progressive_blur tests examples
+
+# Run tests
+pytest
+
+# Check types (optional)
+mypy progressive_blur
 ```
 
-### Design Principles
+## Don't Worry About Being Perfect
 
-1. **Modularity**: Keep functions focused and composable
-2. **Performance**: Optimize for common use cases
-3. **Usability**: Provide sensible defaults and clear error messages
-4. **Extensibility**: Design for easy addition of new algorithms and features
-5. **Backward compatibility**: Avoid breaking changes when possible
+- **Your first PR doesn't need to be perfect** - We'll help you improve it
+- **Ask questions** - We're here to help
+- **Small contributions are welcome** - Even fixing a typo helps!
 
-### Adding New Features
+## Community
 
-When adding new features:
+We're building a friendly community around this project. Everyone is welcome, regardless of experience level. If you're new to open source, this is a great place to start!
 
-1. **Core functionality** goes in `core.py`
-2. **Utility functions** go in `utils.py`
-3. **CLI commands** go in `cli.py`
-4. **Update exports** in `__init__.py`
-5. **Add tests** in appropriate test files
-6. **Update documentation** in README.md
+Remember: **There are no stupid questions!** We all started somewhere.
 
-## 🔄 Release Process
-
-### Version Numbering
-
-We follow [Semantic Versioning](https://semver.org/):
-- **MAJOR**: Breaking changes
-- **MINOR**: New features (backward compatible)
-- **PATCH**: Bug fixes (backward compatible)
-
-### Release Checklist
-
-- [ ] Update version in `pyproject.toml`
-- [ ] Update `CHANGELOG.md`
-- [ ] Run full test suite
-- [ ] Update documentation
-- [ ] Create release tag
-- [ ] Publish to PyPI
-
-## 🤝 Community Guidelines
-
-### Code of Conduct
-
-- Be respectful and inclusive
-- Provide constructive feedback
-- Help others learn and grow
-- Focus on the technical merits
-
-### Communication
-
-- **Issues**: For bug reports and feature requests
-- **Discussions**: For questions and general discussion
-- **Pull Requests**: For code contributions
-
-## 📚 Resources
-
-### Documentation
-- [PIL/Pillow Documentation](https://pillow.readthedocs.io/)
-- [NumPy Documentation](https://numpy.org/doc/)
-- [Python Type Hints](https://docs.python.org/3/library/typing.html)
-
-### Tools
-- [Black Code Formatter](https://black.readthedocs.io/)
-- [isort Import Sorter](https://pycqa.github.io/isort/)
-- [pytest Testing Framework](https://docs.pytest.org/)
-- [mypy Type Checker](https://mypy.readthedocs.io/)
-
-## ❓ Questions?
-
-If you have questions about contributing:
-
-1. Check existing [issues](https://github.com/almmaasoglu/python-progressive-blur/issues)
-2. Start a [discussion](https://github.com/almmaasoglu/python-progressive-blur/discussions)
-3. Reach out to maintainers
-
-Thank you for contributing to Progressive Blur! 🎉 
+Thanks again for contributing! We're looking forward to seeing what you create. 🚀 
