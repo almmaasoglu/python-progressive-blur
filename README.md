@@ -380,5 +380,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 <div align="center">
-  Made with ❤️ by <a href="https://github.com/almmaasoglu">Ali Maasoglu</a>
+  Made with ❤️ by <a href="[https://github.com/almmaasoglu](https://x.com/almmaasoglu)">Alim Maasoglu</a>
 </div>
